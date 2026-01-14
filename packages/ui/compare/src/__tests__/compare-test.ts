@@ -38,7 +38,7 @@ describe('uiWalletAccountsAreSame()', () => {
         const clonedMockUiWalletAccount =
             getOrCreateUiWalletAccountForStandardWalletAccount_DO_NOT_USE_OR_YOU_WILL_BE_FIRED(mockWallet, {
                 ...mockWalletAccount,
-                chains: ['solana:danknet'],
+                chains: ['trezoa:danknet'],
             } as WalletAccount);
         expect(uiWalletAccountsAreSame(mockUiWalletAccount, clonedMockUiWalletAccount)).toBe(true);
     });

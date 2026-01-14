@@ -18,7 +18,7 @@ describe('getOrCreateUiWalletForWalletHandle_DO_NOT_USE_OR_YOU_WILL_BE_FIRED', (
     beforeEach(() => {
         mockWalletAccount = {
             address: 'abc',
-            chains: ['solana:basednet'],
+            chains: ['trezoa:basednet'],
             features: ['feature:b'],
             icon: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA=',
             label: 'Mock Account A',
@@ -26,7 +26,7 @@ describe('getOrCreateUiWalletForWalletHandle_DO_NOT_USE_OR_YOU_WILL_BE_FIRED', (
         };
         mockWallet = {
             accounts: [mockWalletAccount],
-            chains: ['solana:basednet', 'solana:goatnet'],
+            chains: ['trezoa:basednet', 'trezoa:goatnet'],
             features: {
                 'feature:a': { version: '1.0.0' as const },
                 'feature:b': { version: '1.0.0' as const },
@@ -97,7 +97,7 @@ describe('getOrCreateUiWalletForWalletHandle_DO_NOT_USE_OR_YOU_WILL_BE_FIRED', (
     });
     it('returns a new UI wallet given the same underlying Standard wallet that mutated the chains to add one', () => {
         const uiWalletA = getOrCreateUiWalletForStandardWallet_DO_NOT_USE_OR_YOU_WILL_BE_FIRED(mockWallet);
-        (mockWallet.chains as Mutable<Wallet['chains']>).unshift('solana:boomernet');
+        (mockWallet.chains as Mutable<Wallet['chains']>).unshift('trezoa:boomernet');
         const uiWalletB = getOrCreateUiWalletForStandardWallet_DO_NOT_USE_OR_YOU_WILL_BE_FIRED(mockWallet);
         expect(uiWalletB).not.toBe(uiWalletA);
         expect(registerWalletHandle_DO_NOT_USE_OR_YOU_WILL_BE_FIRED).toHaveBeenCalledWith(uiWalletB, mockWallet);
@@ -111,7 +111,7 @@ describe('getOrCreateUiWalletForWalletHandle_DO_NOT_USE_OR_YOU_WILL_BE_FIRED', (
     });
     it('returns a new UI wallet given the same underlying Standard wallet whose existing chains have been mutated', () => {
         const uiWalletA = getOrCreateUiWalletForStandardWallet_DO_NOT_USE_OR_YOU_WILL_BE_FIRED(mockWallet);
-        (mockWallet.chains as Mutable<Wallet['chains']>)[0] = 'solana:danknet';
+        (mockWallet.chains as Mutable<Wallet['chains']>)[0] = 'trezoa:danknet';
         const uiWalletB = getOrCreateUiWalletForStandardWallet_DO_NOT_USE_OR_YOU_WILL_BE_FIRED(mockWallet);
         expect(uiWalletB).not.toBe(uiWalletA);
         expect(registerWalletHandle_DO_NOT_USE_OR_YOU_WILL_BE_FIRED).toHaveBeenCalledWith(uiWalletB, mockWallet);

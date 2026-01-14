@@ -15,7 +15,7 @@ describe('getWalletAccountFeature', () => {
         mockWalletAccount = {
             '~uiWalletHandle': Symbol() as UiWalletAccount['~uiWalletHandle'],
             address: 'abc',
-            chains: ['solana:mainnet'],
+            chains: ['trezoa:mainnet'],
             features: ['feature:a'],
             publicKey: new Uint8Array([1, 2, 3]),
         };
@@ -30,7 +30,7 @@ describe('getWalletAccountFeature', () => {
         }).toThrow(
             new WalletStandardError(WALLET_STANDARD_ERROR__FEATURES__WALLET_ACCOUNT_FEATURE_UNIMPLEMENTED, {
                 address: 'abc',
-                supportedChains: ['solana:mainnet'],
+                supportedChains: ['trezoa:mainnet'],
                 supportedFeatures: ['feature:a'],
                 featureName: 'feature:b',
             })

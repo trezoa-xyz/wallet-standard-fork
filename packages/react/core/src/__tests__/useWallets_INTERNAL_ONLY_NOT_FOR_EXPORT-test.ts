@@ -71,7 +71,7 @@ describe('useWallets_INTERNAL_ONLY_NOT_FOR_EXPORT', () => {
         const mockWallets = [
             {
                 accounts: [],
-                chains: ['solana:mainnet'] as const,
+                chains: ['trezoa:mainnet'] as const,
                 features: {
                     'standard:events': {
                         on(event, listener) {

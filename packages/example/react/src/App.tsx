@@ -1,6 +1,6 @@
-import { GlowWalletAdapter } from '@solana/wallet-adapter-glow';
-import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom';
-import { registerWalletAdapter, SOLANA_MAINNET_CHAIN } from '@solana/wallet-standard';
+import { GlowWalletAdapter } from '@trezoa/wallet-adapter-glow';
+import { PhantomWalletAdapter } from '@trezoa/wallet-adapter-phantom';
+import { registerWalletAdapter, SOLANA_MAINNET_CHAIN } from '@trezoa/wallet-standard';
 import { useWallets } from '@wallet-standard/react';
 import type { FC } from 'react';
 import React, { useEffect } from 'react';

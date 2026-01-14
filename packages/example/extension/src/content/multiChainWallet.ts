@@ -1,4 +1,4 @@
-import { SOLANA_MAINNET_CHAIN } from '@solana/wallet-standard';
+import { SOLANA_MAINNET_CHAIN } from '@trezoa/wallet-standard';
 import type {
     ConnectFeature,
     ConnectMethod,
@@ -42,7 +42,7 @@ export class EthereumWalletAccount implements WalletAccount {
     }
 }
 
-export class SolanaWalletAccount implements WalletAccount {
+export class TrezoaWalletAccount implements WalletAccount {
     readonly #publicKey: Uint8Array;
 
     get address() {
@@ -62,7 +62,7 @@ export class SolanaWalletAccount implements WalletAccount {
     }
 
     constructor(publicKey: Uint8Array) {
-        if (new.target === SolanaWalletAccount) {
+        if (new.target === TrezoaWalletAccount) {
             Object.freeze(this);
         }
 
@@ -70,7 +70,7 @@ export class SolanaWalletAccount implements WalletAccount {
     }
 }
 
-export type MultiChainWalletAccount = EthereumWalletAccount | SolanaWalletAccount;
+export type MultiChainWalletAccount = EthereumWalletAccount | TrezoaWalletAccount;
 
 export class MultiChainWallet implements Wallet {
     #name = 'MultiChain Wallet';
@@ -136,8 +136,8 @@ export class MultiChainWallet implements Wallet {
             switch (network) {
                 case 'ethereum':
                     return new EthereumWalletAccount(publicKey);
-                case 'solana':
-                    return new SolanaWalletAccount(publicKey);
+                case 'trezoa':
+                    return new TrezoaWalletAccount(publicKey);
                 default:
                     throw new Error(`Unknown network: '${network}'`);
             }

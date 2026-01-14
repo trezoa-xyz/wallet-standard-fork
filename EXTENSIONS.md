@@ -4,5 +4,5 @@ Each chain may define extensions to the Wallet Standard. These extensions descri
 be implemented by Wallets that support the chain.
 
 - [Bitcoin](extensions/bitcoin.md)
-- [Solana](extensions/solana.md)
+- [Trezoa](extensions/trezoa.md)
 - [Sui](extensions/sui.md)

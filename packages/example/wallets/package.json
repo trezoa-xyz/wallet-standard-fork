@@ -1,7 +1,7 @@
 {
     "private": true,
     "name": "@wallet-standard/example-wallets",
-    "author": "Solana Maintainers <maintainers@solana.foundation>",
+    "author": "Trezoa Maintainers <maintainers@trezoa.foundation>",
     "repository": "https://github.com/wallet-standard/wallet-standard",
     "license": "Apache-2.0",
     "type": "module",
@@ -19,8 +19,8 @@
         "package": "shx mkdir -p lib/cjs && shx echo '{ \"type\": \"commonjs\" }' > lib/cjs/package.json"
     },
     "dependencies": {
-        "@solana/wallet-standard": "^1.0.2",
-        "@solana/web3.js": "^1.66.2",
+        "@trezoa/wallet-standard": "^1.0.2",
+        "@trezoa/web3.js": "^1.66.2",
         "@wallet-standard/core": "workspace:^",
         "@wallet-standard/ethereum": "workspace:^",
         "@wallet-standard/experimental": "workspace:^",

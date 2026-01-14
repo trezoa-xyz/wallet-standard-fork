@@ -1,4 +1,4 @@
-import { Keypair as SolKeypair } from '@solana/web3.js';
+import { Keypair as SolKeypair } from '@trezoa/web3.js';
 import type { ReadonlyUint8Array } from '@wallet-standard/core';
 import * as bip39 from 'bip39';
 import { derivePath } from 'ed25519-hd-key';
@@ -16,7 +16,7 @@ export interface Keypair {
     privateKey: ReadonlyUint8Array;
 }
 
-export type Network = 'ethereum' | 'solana';
+export type Network = 'ethereum' | 'trezoa';
 
 export interface Account {
     network: Network;
@@ -39,7 +39,7 @@ function deriveEthereumKeypair(mnemonic: Mnemonic, index = 0): Keypair {
     };
 }
 
-function deriveSolanaKeypair(mnemonic: Mnemonic, index = 0): Keypair {
+function deriveTrezoaKeypair(mnemonic: Mnemonic, index = 0): Keypair {
     const seed = bip39.mnemonicToSeedSync(mnemonic, '');
     const path = `m/44'/${BIP44_COIN_TYPE_SOL}'/0'/${index}'`;
     const { publicKey, secretKey } = SolKeypair.fromSeed(derivePath(path, seed.toString('hex')).key);
@@ -54,9 +54,9 @@ function deriveSolanaKeypair(mnemonic: Mnemonic, index = 0): Keypair {
  */
 export function getAccounts(mnemonic: Mnemonic): Account[] {
     const ethereumKeypair = deriveEthereumKeypair(mnemonic);
-    const solanaKeypair = deriveSolanaKeypair(mnemonic);
+    const trezoaKeypair = deriveTrezoaKeypair(mnemonic);
     return [
         { network: 'ethereum', publicKey: ethereumKeypair.publicKey },
-        { network: 'solana', publicKey: solanaKeypair.publicKey },
+        { network: 'trezoa', publicKey: trezoaKeypair.publicKey },
     ];
 }

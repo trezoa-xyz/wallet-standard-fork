@@ -11,8 +11,8 @@
         "build": "parcel build"
     },
     "dependencies": {
-        "@solana/wallet-standard": "^1.0.2",
-        "@solana/web3.js": "^1.66.2",
+        "@trezoa/wallet-standard": "^1.0.2",
+        "@trezoa/web3.js": "^1.66.2",
         "@wallet-standard/core": "workspace:^",
         "@wallet-standard/ethereum": "workspace:^",
         "bip39": "^3.0.4",

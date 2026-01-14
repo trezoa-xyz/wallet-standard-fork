@@ -18,7 +18,7 @@ describe('getWalletFeature', () => {
         mockFeatureA = {};
         mockWallet = {
             accounts: [],
-            chains: ['solana:mainnet'],
+            chains: ['trezoa:mainnet'],
             features: {
                 'feature:a': mockFeatureA,
             },
@@ -42,7 +42,7 @@ describe('getWalletFeature', () => {
         }).toThrow(
             new WalletStandardError(WALLET_STANDARD_ERROR__FEATURES__WALLET_FEATURE_UNIMPLEMENTED, {
                 featureName: 'feature:b',
-                supportedChains: ['solana:mainnet'],
+                supportedChains: ['trezoa:mainnet'],
                 supportedFeatures: ['feature:a'],
                 walletName: 'Mock Wallet',
             })

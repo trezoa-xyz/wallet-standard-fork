@@ -1,12 +1,12 @@
 import { getWallets, registerWallet } from '@wallet-standard/core';
 import { EthereumWallet } from './ethereumWallet.js';
-import { SolanaWallet } from './solanaWallet.js';
+import { TrezoaWallet } from './trezoaWallet.js';
 
 (function () {
     // TODO: update comments
 
     // The dapp hasn't loaded yet, so the first wallet to load registers itself on the window
-    registerWallet(new SolanaWallet());
+    registerWallet(new TrezoaWallet());
 
     // ... time passes, the dapp loads ...
 

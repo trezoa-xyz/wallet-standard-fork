@@ -1,6 +1,6 @@
-import type { SolanaSignAndSendTransactionOptions } from '@solana/wallet-standard';
-import type { SendOptions, Transaction, TransactionSignature } from '@solana/web3.js';
-import { Connection } from '@solana/web3.js';
+import type { TrezoaSignAndSendTransactionOptions } from '@trezoa/wallet-standard';
+import type { SendOptions, Transaction, TransactionSignature } from '@trezoa/web3.js';
+import { Connection } from '@trezoa/web3.js';
 
 /**
  * TODO: docs
@@ -18,7 +18,7 @@ export type SendTransaction = (
 export async function sendAndConfirmTransaction(
     transaction: Transaction,
     endpoint: string,
-    options: SolanaSignAndSendTransactionOptions = {},
+    options: TrezoaSignAndSendTransactionOptions = {},
     sendTransaction: SendTransaction = sendRawTransaction
 ): Promise<TransactionSignature> {
     const { commitment, preflightCommitment, skipPreflight, maxRetries, minContextSlot } = options;

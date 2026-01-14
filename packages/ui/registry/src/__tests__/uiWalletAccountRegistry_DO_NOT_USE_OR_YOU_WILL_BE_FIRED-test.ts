@@ -18,7 +18,7 @@ describe('getOrCreateUiWalletAccountForStandardWalletAccount_DO_NOT_USE_OR_YOU_W
     beforeEach(() => {
         mockWalletAccount = {
             address: 'abc',
-            chains: ['solana:basednet'],
+            chains: ['trezoa:basednet'],
             features: ['feature:b'],
             icon: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA=',
             label: 'Mock Account A',
@@ -26,7 +26,7 @@ describe('getOrCreateUiWalletAccountForStandardWalletAccount_DO_NOT_USE_OR_YOU_W
         };
         mockWallet = {
             accounts: [mockWalletAccount],
-            chains: ['solana:basednet', 'solana:goatnet'],
+            chains: ['trezoa:basednet', 'trezoa:goatnet'],
             features: {
                 'feature:a': { version: '1.0.0' as const },
                 'feature:b': { version: '1.0.0' as const },
@@ -116,7 +116,7 @@ describe('getOrCreateUiWalletAccountForStandardWalletAccount_DO_NOT_USE_OR_YOU_W
             mockWallet,
             mockWalletAccount
         );
-        (mockWalletAccount.chains as Mutable<Wallet['chains']>).unshift('solana:boomernet');
+        (mockWalletAccount.chains as Mutable<Wallet['chains']>).unshift('trezoa:boomernet');
         const uiWalletAccountB = getOrCreateUiWalletAccountForStandardWalletAccount_DO_NOT_USE_OR_YOU_WILL_BE_FIRED(
             mockWallet,
             mockWalletAccount
@@ -142,7 +142,7 @@ describe('getOrCreateUiWalletAccountForStandardWalletAccount_DO_NOT_USE_OR_YOU_W
             mockWallet,
             mockWalletAccount
         );
-        (mockWalletAccount.chains as Mutable<Wallet['chains']>)[0] = 'solana:danknet';
+        (mockWalletAccount.chains as Mutable<Wallet['chains']>)[0] = 'trezoa:danknet';
         const uiWalletAccountB = getOrCreateUiWalletAccountForStandardWalletAccount_DO_NOT_USE_OR_YOU_WILL_BE_FIRED(
             mockWallet,
             mockWalletAccount

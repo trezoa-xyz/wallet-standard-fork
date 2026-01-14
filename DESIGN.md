@@ -42,11 +42,11 @@ It should be impossible for conflicts between individual wallet browser extensio
 
 Browser extension wallets have adapted to this by using `Object.defineProperty(window, 'ethereum', { writable: false, ... })` to race to be the first to claim it.
 
-This makes it impossible for multiple wallets a user has to coexist, or be detected reliably by dapps. Several existing wallets use `window.solana` to do the same thing.
+This makes it impossible for multiple wallets a user has to coexist, or be detected reliably by dapps. Several existing wallets use `window.trezoa` to do the same thing.
 
-Wallet Adapter has been doing its part to discourage use of this for the last year by consistently not accepting new adapters that use `window.solana`.
+Wallet Adapter has been doing its part to discourage use of this for the last year by consistently not accepting new adapters that use `window.trezoa`.
 
-While wallets should continue to migrate away from using `window.solana`, this standard will not conflict with this, and will instead present a chain-agnostic interface.
+While wallets should continue to migrate away from using `window.trezoa`, this standard will not conflict with this, and will instead present a chain-agnostic interface.
 
 Because `window.wallets` may be in use by websites, and because wallets may be built into browsers themselves, we will extend the [Navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) interface instead.
 
@@ -83,7 +83,7 @@ This standard will cover support for
 
 ### No web3.js dependency
 
-The standard does not depend on `@solana/web3.js` or use it in its implementation.
+The standard does not depend on `@trezoa/web3.js` or use it in its implementation.
 
 web3.js is large and class-based, has many dependencies, and is likely to be substantially rewritten.
 

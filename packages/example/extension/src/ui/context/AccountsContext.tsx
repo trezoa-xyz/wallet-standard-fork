@@ -1,10 +1,10 @@
-import { PublicKey as SolPublicKey } from '@solana/web3.js';
+import { PublicKey as SolPublicKey } from '@trezoa/web3.js';
 import { utils as ethUtils } from 'ethers';
 import type { FC, ReactNode } from 'react';
 import React, { useEffect, useState } from 'react';
 import { rpc } from '../rpc/index';
 
-export type Network = 'ethereum' | 'solana';
+export type Network = 'ethereum' | 'trezoa';
 
 export interface Account {
     network: Network;
@@ -16,7 +16,7 @@ function computeAddress(network: Network, publicKey: Uint8Array) {
     switch (network) {
         case 'ethereum':
             return ethUtils.computeAddress(publicKey);
-        case 'solana':
+        case 'trezoa':
             return new SolPublicKey(publicKey).toBase58();
         default:
             throw new Error(`Unknown network: '${network}'`);

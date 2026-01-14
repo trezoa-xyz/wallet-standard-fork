@@ -56,7 +56,7 @@ function MyComponent(props) {
 function ErrorComponent({ error }) {
     if (
         isWalletStandardError(error, WALLET_STANDARD_ERROR__ACCOUNT__FEATURE_NOT_SUPPORTED) &&
-        error.context.featureName === 'solana:signMessage'
+        error.context.featureName === 'trezoa:signMessage'
     ) {
         return (
             <span>

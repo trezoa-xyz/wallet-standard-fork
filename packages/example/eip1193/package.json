@@ -2,7 +2,7 @@
     "version": null,
     "private": true,
     "name": "@wallet-standard/example-eip1193",
-    "author": "Solana Maintainers <maintainers@solana.foundation>",
+    "author": "Trezoa Maintainers <maintainers@trezoa.foundation>",
     "repository": "https://github.com/wallet-standard/wallet-standard",
     "license": "Apache-2.0",
     "engines": {

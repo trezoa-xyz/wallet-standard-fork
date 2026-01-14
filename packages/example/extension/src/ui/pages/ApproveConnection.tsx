@@ -4,7 +4,7 @@ import { condenseAddress } from '../../utils/address';
 import { useAccounts } from '../hooks/useAccounts';
 import { rpc } from '../rpc/index';
 
-export type Network = 'ethereum' | 'solana';
+export type Network = 'ethereum' | 'trezoa';
 
 export interface Account {
     network: Network;

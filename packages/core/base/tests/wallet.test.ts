@@ -4,7 +4,7 @@ class GlowWallet implements Wallet {
     version = '1.0.0' as const;
     name = 'Glow';
     icon = `data:image/png;base64,` as const;
-    chains = ['solana:mainnet', 'solana:devnet'] as const;
+    chains = ['trezoa:mainnet', 'trezoa:devnet'] as const;
     features = {
         'standard:connect': {
             connect: async () => ({ accounts: this.accounts }),
@@ -26,13 +26,13 @@ class GlowWallet implements Wallet {
             signIn() {},
         },
     };
-    accounts = [new GlowSolanaWalletAccount()];
+    accounts = [new GlowTrezoaWalletAccount()];
 }
 
-class GlowSolanaWalletAccount implements WalletAccount {
+class GlowTrezoaWalletAccount implements WalletAccount {
     address = '';
     publicKey = new Uint8Array();
-    chains = ['solana:mainnet', 'solana:devnet', 'solana:testnet', 'solana:localnet'] as const;
+    chains = ['trezoa:mainnet', 'trezoa:devnet', 'trezoa:testnet', 'trezoa:localnet'] as const;
     features = ['experimental:signMessage', 'experimental:signTransaction'] as const;
 }
 
@@ -45,6 +45,6 @@ await wallet.features['standard:connect'].connect();
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 wallet.features['standard:events'].on('change', () => {});
-wallet.features['experimental:signTransaction'].signTransaction(account, 'solana', new Uint8Array());
+wallet.features['experimental:signTransaction'].signTransaction(account, 'trezoa', new Uint8Array());
 wallet.features['experimental:signMessage'].signMessage(account, new Uint8Array());
 wallet.features['glow:'].signIn();
