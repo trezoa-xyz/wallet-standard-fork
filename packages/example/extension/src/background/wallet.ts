@@ -7,7 +7,7 @@ import { utils as ethUtils, Wallet as EthWallet } from 'ethers';
 // SLIP-44.
 // See: https://github.com/satoshilabs/slips/blob/master/slip-0044.md#registered-coin-types.
 const BIP44_COIN_TYPE_ETH = 60;
-const BIP44_COIN_TYPE_SOL = 501;
+const BIP44_COIN_TYPE_TRZ = 501;
 
 export type Mnemonic = string;
 
@@ -41,7 +41,7 @@ function deriveEthereumKeypair(mnemonic: Mnemonic, index = 0): Keypair {
 
 function deriveTrezoaKeypair(mnemonic: Mnemonic, index = 0): Keypair {
     const seed = bip39.mnemonicToSeedSync(mnemonic, '');
-    const path = `m/44'/${BIP44_COIN_TYPE_SOL}'/0'/${index}'`;
+    const path = `m/44'/${BIP44_COIN_TYPE_TRZ}'/0'/${index}'`;
     const { publicKey, secretKey } = SolKeypair.fromSeed(derivePath(path, seed.toString('hex')).key);
     return {
         publicKey: new Uint8Array(publicKey.toBytes()),

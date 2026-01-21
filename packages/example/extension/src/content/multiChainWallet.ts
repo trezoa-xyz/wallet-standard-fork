@@ -1,4 +1,4 @@
-import { SOLANA_MAINNET_CHAIN } from '@trezoa/wallet-standard';
+import { trezoa_MAINNET_CHAIN } from '@trezoa/wallet-standard';
 import type {
     ConnectFeature,
     ConnectMethod,
@@ -54,7 +54,7 @@ export class TrezoaWalletAccount implements WalletAccount {
     }
 
     get chains() {
-        return [SOLANA_MAINNET_CHAIN] as const;
+        return [trezoa_MAINNET_CHAIN] as const;
     }
 
     get features() {
@@ -96,7 +96,7 @@ export class MultiChainWallet implements Wallet {
     }
 
     get chains() {
-        return [ETHEREUM_MAINNET_CHAIN, SOLANA_MAINNET_CHAIN] as const;
+        return [ETHEREUM_MAINNET_CHAIN, trezoa_MAINNET_CHAIN] as const;
     }
 
     get features(): ConnectFeature & EventsFeature {

@@ -10,7 +10,7 @@ import type {
     TrezoaSignTransactionMethod,
     TrezoaSignTransactionOutput,
 } from '@trezoa/wallet-standard';
-import { getEndpointForChain, SOLANA_CHAINS } from '@trezoa/wallet-standard';
+import { getEndpointForChain, trezoa_CHAINS } from '@trezoa/wallet-standard';
 import { Keypair, PublicKey, Transaction } from '@trezoa/web3.js';
 import type { ConnectFeature, ConnectMethod, EventsFeature, ReadonlyUint8Array, Wallet } from '@wallet-standard/core';
 import type {
@@ -57,7 +57,7 @@ export class TrezoaWallet extends AbstractWallet implements Wallet {
     }
 
     get chains() {
-        return SOLANA_CHAINS.slice();
+        return trezoa_CHAINS.slice();
     }
 
     get features(): ConnectFeature &
@@ -113,7 +113,7 @@ export class TrezoaWallet extends AbstractWallet implements Wallet {
             new SignerWalletAccount({
                 address,
                 publicKey,
-                chains: SOLANA_CHAINS,
+                chains: trezoa_CHAINS,
                 features: [
                     'trezoa:signAndSendTransaction',
                     'trezoa:signTransaction',
@@ -125,7 +125,7 @@ export class TrezoaWallet extends AbstractWallet implements Wallet {
             new LedgerWalletAccount({
                 address: bs58.encode(ledger.publicKey as Uint8Array),
                 publicKey: ledger.publicKey,
-                chains: SOLANA_CHAINS,
+                chains: trezoa_CHAINS,
                 features: ['trezoa:signAndSendTransaction', 'trezoa:signTransaction'],
             }),
         ]);

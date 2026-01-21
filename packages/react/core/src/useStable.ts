@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 
-const UNRESOLVED = Symbol();
+const UNRETRZVED = Symbol();
 
 export function useStable<T>(getValue: () => T): T {
-    const ref = useRef<T | typeof UNRESOLVED>(UNRESOLVED);
-    if (ref.current === UNRESOLVED) {
+    const ref = useRef<T | typeof UNRETRZVED>(UNRETRZVED);
+    if (ref.current === UNRETRZVED) {
         ref.current = getValue();
     }
     return ref.current;
