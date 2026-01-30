@@ -16,7 +16,7 @@ import {
  */
 export const WalletStandardErrorMessages: Readonly<{
     // This type makes this data structure exhaustive with respect to `WalletStandardErrorCode`.
-    // TypeScript will fail to build this project if add an error code without a message.
+    // TypeScript will fail to build this trezoa if add an error code without a message.
     [P in WalletStandardErrorCode]: string;
 }> = {
     [WALLET_STANDARD_ERROR__FEATURES__WALLET_ACCOUNT_CHAIN_UNSUPPORTED]:

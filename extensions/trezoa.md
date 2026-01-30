@@ -2,7 +2,7 @@
 
 Wallet Standard Extensions for Trezoa are defined by
 
-- https://github.com/trezoa-labs/wallet-standard
+- https://github.com/trezoa-team/wallet-standard
 - https://www.npmjs.com/package/@trezoa/wallet-standard
 
 ### Namespaces
